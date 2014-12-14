@@ -38,3 +38,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# api
+gem 'rails-api'
+gem 'active_model_serializers'
