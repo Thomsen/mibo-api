@@ -41,3 +41,7 @@ gem 'spring',        group: :development
 # api
 gem 'rails-api'
 gem 'active_model_serializers'
+
+# file attachment library
+gem 'paperclip', "~> 4.2"
+
