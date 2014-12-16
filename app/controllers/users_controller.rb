@@ -6,7 +6,17 @@ class UsersController < ApplicationController
   end
 
   def login
-    puts 'login'
+    unless request.get?
+      @username = params[:username]
+      @password = params[:password]
+      @user = User.authen_by_username(@username, @password)
+      puts "username #{@username}" # '' no effect
+      if @user.nil?
+        render json: "not found user"
+      else
+        render json: @user
+      end
+    end
   end
 
 end
