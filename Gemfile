@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+#source 'http://ruby.taobao.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 
 # api
 gem 'rails-api'
-gem 'active_model_serializers'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'
 
 # file attachment library
 gem 'paperclip', "~> 4.2"
