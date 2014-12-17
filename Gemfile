@@ -39,6 +39,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# windows timezone
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 # api
 gem 'rails-api'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'

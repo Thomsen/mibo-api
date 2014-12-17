@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'apis#index'
 
+  resources 'apis'
+  
   post 'users/login'
   resources 'users'
 
