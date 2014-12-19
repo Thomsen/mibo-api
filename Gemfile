@@ -1,8 +1,8 @@
-source 'https://rubygems.org'
-#source 'http://ruby.taobao.org/'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0.rc3'
 # Use sqlite3 as the database for Active Record, pg for heroku
 gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
