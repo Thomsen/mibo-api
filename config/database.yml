@@ -21,7 +21,4 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: app-dev
+  url: postgres://tcfkyajyvwvqrd:BLy6BAxb2k7LYB8JDe9ybpNZZr@ec2-54-197-239-171.compute-1.amazonaws.com:5432/d3dqlc9c7j0jba
