@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # windows timezone
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # api
 gem 'rails-api'
