@@ -43,7 +43,7 @@ gem 'spring',        group: :development
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # api
-gem 'rails-api'
+gem 'rails-api', '~> 0.4.0'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'
 
 # file attachment library
