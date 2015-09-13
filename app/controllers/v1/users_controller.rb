@@ -1,10 +1,24 @@
-class UsersController < ApplicationController
+class V1::UsersController < ApplicationController
 
+  api!
+  def index
+  end
+
+  api!
+  def create
+  end
+
+  api!
+  def destroy
+  end
+
+  api!
   def show
     @user = User.find(params[:id])
     render json: @user, serializer: UserSerializer
   end
 
+  api!
   def login
     unless request.get?
       @username = params[:username]

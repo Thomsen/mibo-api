@@ -46,6 +46,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'rails-api', '~> 0.4.0'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', branch: 'master'
 
+gem 'apipie-rails'
+
 # file attachment library
 gem 'paperclip', "~> 4.2"
 

@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'apis#index'
+  apipie
 
-  resources 'apis'
-  
-  post 'users/login'
-  resources 'users'
+  namespace :v1 do
+p    resources :users
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
