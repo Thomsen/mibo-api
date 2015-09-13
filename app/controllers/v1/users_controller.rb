@@ -1,24 +1,55 @@
-class V1::UsersController < ApplicationController
+class V1::UsersController < V1::BaseController
 
-  api!
+  def_param_group :user do
+    param :user, Hash, :required => true, :action_aware => true do
+      param :username, String, "name of the user", :required => true
+      param :email, String, "email of the user", :required => true
+      param :gender, String, "gender of the user", :requried => true
+      param :password, String, "password of the user", :required => true
+      param :remark, String, "remark of the user", :required => false
+      param :description, String, "description of the user", :requried => false
+    end
+  end
+
+  api! 'show all user profile'
   def index
+    @users = User.all
+    render json: @users
   end
 
-  api!
-  def create
+  api :GET, 'v1/users/:id', "show user profile"
+  param :params, Hash, :required => true do
+    param :id, :number, 'user id', :required => true
   end
-
-  api!
-  def destroy
-  end
-
-  api!
   def show
     @user = User.find(params[:id])
     render json: @user, serializer: UserSerializer
   end
 
-  api!
+  api! 'create user'
+  param_group :user
+  def create
+    @user = User.new(user_params)
+
+    if (@user.save)
+      render json: @user, status: :created, location: @user
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
+  api! 'delete user'
+  param :params, Hash, :required => true do
+    param :id, :number, 'user id', :required => true
+  end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destory
+
+    head :no_content
+  end
+
+  api :POST, 'v1/login', 'user login'
   def login
     unless request.get?
       @username = params[:username]
@@ -31,6 +62,12 @@ class V1::UsersController < ApplicationController
         render json: @user
       end
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :email, :gender, :remark, :description)
   end
 
 end

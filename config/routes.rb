@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   apipie
 
   namespace :v1 do
-p    resources :users
+    resources :users
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
