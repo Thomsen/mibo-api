@@ -5,7 +5,7 @@ class V1::UsersController < V1::BaseController
       param :username, String, "name of the user", :required => true
       param :email, String, "email of the user", :required => true
       param :gender, String, "gender of the user", :requried => true
-      param :password, String, "password of the user", :required => true
+      param :form_password, String, "password of the user", :required => true
       param :remark, String, "remark of the user", :required => false
       param :description, String, "description of the user", :requried => false
     end
@@ -18,7 +18,7 @@ class V1::UsersController < V1::BaseController
   end
 
   api :GET, 'v1/users/:id', "show user profile"
-  param :params, Hash, :required => true do
+  param :params, Hash do
     param :id, :number, 'user id', :required => true
   end
   def show
@@ -32,14 +32,14 @@ class V1::UsersController < V1::BaseController
     @user = User.new(user_params)
 
     if (@user.save)
-      render json: @user, status: :created, location: @user
+      render json: @user, status: :created#, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   api! 'delete user'
-  param :params, Hash, :required => true do
+  param :params, Hash do
     param :id, :number, 'user id', :required => true
   end
   def destroy
@@ -50,6 +50,10 @@ class V1::UsersController < V1::BaseController
   end
 
   api :POST, 'v1/users/login', 'user login'
+  param :params, Hash do
+    param :username, String, 'user name', :required => true
+    param :password, String, 'user password', :required => true
+  end
   def login
     unless request.get?
       @username = params[:username]
@@ -67,7 +71,7 @@ class V1::UsersController < V1::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :gender, :remark, :description)
+    params.require(:user).permit(:username, :form_password, :email, :gender, :remark, :description)
   end
 
 end
