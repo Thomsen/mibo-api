@@ -49,7 +49,7 @@ class V1::UsersController < V1::BaseController
     head :no_content
   end
 
-  api :POST, 'v1/login', 'user login'
+  api :POST, 'v1/users/login', 'user login'
   def login
     unless request.get?
       @username = params[:username]
