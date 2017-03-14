@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   # protect_from_forgery with: :exception
 
   #before_filter
-  after_filter :allow_cross_domain_access
+  after_action :allow_cross_domain_access # after_action replace after_filter
 
   def allow_cross_domain_access
     response.headers["Access-Control-Allow-Origin"] = "*"
