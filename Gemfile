@@ -42,3 +42,5 @@ gem 'apipie-rails'
 gem 'mysql2'
 
 gem 'active_model_serializers'
+
+gem 'paperclip'
