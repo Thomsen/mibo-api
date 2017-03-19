@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'ng_page/loading'
+
+  root to: 'ng_page#loading'
+
   apipie
 
   namespace :v1 do

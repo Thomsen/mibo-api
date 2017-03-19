@@ -26,3 +26,5 @@
 
 # image dir
 /public/system
+
+/node_modules

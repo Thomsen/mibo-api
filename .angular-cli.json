@@ -1,0 +1,46 @@
+{
+  "project": {
+    "version": "0.0.1",
+    "name": "mibo-api-ng"
+  },
+  "apps": [
+    {
+      "root": "public/ng/src",
+      "outDir": "public/ng/dist",
+      "assets": "assets",
+      "index": "index.html",
+      "polyfills": "polyfills.ts",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./public/ng/protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./public/ng/karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false
+  }
+}

@@ -36,7 +36,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-### add
+### add gem
 
 gem 'apipie-rails'
 gem 'mysql2'
@@ -44,3 +44,9 @@ gem 'mysql2'
 gem 'active_model_serializers'
 
 gem 'paperclip'
+
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier' # compressor for javascript assets
+
+gem 'turbolinks', '~> 5'

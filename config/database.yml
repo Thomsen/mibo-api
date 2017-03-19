@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: mysql2
   username: mibo
-  password: ####
+  password: dbmibo
   database: mibo
 
 # Warning: The database defined as "test" will be erased and
