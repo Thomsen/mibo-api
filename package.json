@@ -8,6 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "watch": "ng build -w",
     "e2e": "ng e2e",
     "postinstall": "cp -R node_modules public/ng"
   },
