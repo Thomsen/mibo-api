@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 
@@ -9,8 +10,10 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
-  }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -23,9 +26,10 @@ export class LoginComponent implements OnInit {
       let username = JSON.parse(result._body).username;
       console.log('username ' + username);
       if (username == this.user.name) {
-        alert('success');
+        // alert('success');
+
+        this.router.navigate(['/ng/main']);
       }
     });
   }
-
 }

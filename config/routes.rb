@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'ng_page/loading'
+  get 'ng/:sub', to: 'ng_page#loading', sub: /[\s\S]*/
 
   root to: 'ng_page#loading'
 
