@@ -52,5 +52,6 @@ gem 'paperclip'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier' # compressor for javascript assets
+gem 'jquery-rails'
 
 gem 'turbolinks', '~> 5'
